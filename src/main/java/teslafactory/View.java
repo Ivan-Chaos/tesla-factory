@@ -1,5 +1,6 @@
 package teslafactory;
 
+import javafx.scene.control.ProgressBar;
 import teslafactory.model.CarFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,6 +43,9 @@ public class View {
     @FXML
     private Label salesInProgress;
 
+    @FXML
+    private ProgressBar factoryCapacity;
+
 
     protected Config config;
 
@@ -67,7 +71,7 @@ public class View {
             inProgress.setText("Cars in build progress: " + state.inProgress());
             totalSold.setText("Total sold: " + state.totalSold());
             salesInProgress.setText("Sales in progress: " + state.salesInProgress());
-            factoryCapacity.setProgress(50);
+            factoryCapacity.setProgress((double)state.inProgress() / 7);
         });
     }
 }

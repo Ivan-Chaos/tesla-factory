@@ -146,5 +146,6 @@
     <Button layoutX="164.0" layoutY="448.0" mnemonicParsing="false" onAction="#onClickButtonStop" prefHeight="25.0" prefWidth="123.0" text="stop" />
     <Button layoutX="306.0" layoutY="448.0" mnemonicParsing="false" onAction="#onClickButtonStart" prefHeight="25.0" prefWidth="123.0" text="start" />
    <Separator layoutX="529.0" layoutY="3.0" orientation="VERTICAL" prefHeight="486.0" prefWidth="6.0" />
+   <ProgressBar fx:id="factoryCapacity" layoutX="103.0" layoutY="365.0" prefHeight="18.0" prefWidth="139.0" progress="0.0" />
 
 </AnchorPane>
