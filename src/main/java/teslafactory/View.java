@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.chart.LineChart;
 
 
 
@@ -55,6 +56,9 @@ public class View {
     @FXML
     private ProgressBar carStorageCapacity;
 
+    @FXML
+    private LineChart dealerProgress;
+
 
 
     protected Config config;
@@ -86,6 +90,7 @@ public class View {
             totalSold.setText("Total sold: " + state.totalSold());
             salesInProgress.setText("Sales in progress: " + state.salesInProgress());
             factoryCapacity.setProgress((double)state.inProgress() / config.optimalCarStorageSize());
+
         });
     }
 }
