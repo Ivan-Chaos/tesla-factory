@@ -46,6 +46,16 @@ public class View {
     @FXML
     private ProgressBar factoryCapacity;
 
+    @FXML
+    private ProgressBar bodyStorageCapacity;
+    @FXML
+    private ProgressBar engineStorageCapacity;
+    @FXML
+    private ProgressBar accessoriesStorageCapacity;
+    @FXML
+    private ProgressBar carStorageCapacity;
+
+
 
     protected Config config;
 
@@ -64,6 +74,10 @@ public class View {
             engineStorageInfo.setText(state.engineStorageSize() + "/" + config.engineStorageMaxSize());
             accessoriesStorageInfo.setText(state.accessoriesStorageSize() + "/" + config.accessoriesStorageMaxSize());
             carStorageInfo.setText(state.carStorageSize() + "/" + config.accessoriesStorageMaxSize());
+            bodyStorageCapacity.setProgress((double)state.bodyStorageSize() / config.bodyStorageMaxSize());
+            engineStorageCapacity.setProgress((double)state.engineStorageSize() / config.engineStorageMaxSize());
+            accessoriesStorageCapacity.setProgress((double)state.accessoriesStorageSize() / config.accessoriesStorageMaxSize());
+            carStorageCapacity.setProgress((double)state.carStorageSize() / config.carStorageMaxSize());
             bodyTotalMade.setText(TOTAL_MADE_PREFIX + state.bodiesTotalMade());
             engineTotalMade.setText(TOTAL_MADE_PREFIX + state.enginesTotalMade());
             accessoriesTotalMade.setText(TOTAL_MADE_PREFIX + state.accessoriesTotalMade());
@@ -71,7 +85,7 @@ public class View {
             inProgress.setText("Cars in build progress: " + state.inProgress());
             totalSold.setText("Total sold: " + state.totalSold());
             salesInProgress.setText("Sales in progress: " + state.salesInProgress());
-            factoryCapacity.setProgress((double)state.inProgress() / 7);
+            factoryCapacity.setProgress((double)state.inProgress() / config.optimalCarStorageSize());
         });
     }
 }
