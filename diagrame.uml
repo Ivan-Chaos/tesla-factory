@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>F:/edu/semester5/CP/labs/lab8/tesla-factory/tesla-factory</OriginalElement>
+  <nodes>
+    <node x="1000.0" y="1409.0">teslafactory.model.supplier.BodySupplier</node>
+    <node x="463.0" y="0.0">teslafactory.Config</node>
+    <node x="524.0" y="438.0">teslafactory.Config.Consts</node>
+    <node x="899.0" y="0.0">teslafactory.model.State</node>
+    <node x="0.0" y="1556.0">teslafactory.model.details.Numerable</node>
+    <node x="329.0" y="1196.0">teslafactory.model.Preferences</node>
+    <node x="988.0" y="872.0">teslafactory.Controller</node>
+    <node x="0.0" y="549.0">teslafactory.model.CarFactory.FactoryWork</node>
+    <node x="0.0" y="1409.0">teslafactory.model.details.Detail</node>
+    <node x="294.0" y="648.5">teslafactory.model.CarFactory.Dealer</node>
+    <node x="950.0" y="1196.0">teslafactory.model.details.CarEngine</node>
+    <node x="1542.0" y="1196.0">teslafactory.Main</node>
+    <node x="98.0" y="0.0">teslafactory.model.CarFactory</node>
+    <node x="1368.0" y="1409.0">teslafactory.Observable</node>
+    <node x="0.0" y="872.0">teslafactory.model.supplier.DetailsSupplier</node>
+    <node x="1593.0" y="1409.0">teslafactory.Observer</node>
+    <node x="1302.0" y="872.0">teslafactory.model.Car</node>
+    <node x="654.0" y="1196.0">teslafactory.model.details.CarBody</node>
+    <node x="614.0" y="1409.0">teslafactory.model.supplier.EngineSupplier</node>
+    <node x="178.0" y="1409.0">teslafactory.model.supplier.AccessoriesSupplier</node>
+    <node x="1497.0" y="0.0">teslafactory.View</node>
+    <node x="380.0" y="872.0">DetailsSupplier</node>
+    <node x="1246.0" y="1196.0">teslafactory.model.details.CarAccessories</node>
+    <node x="760.0" y="872.0">teslafactory.Storage</node>
+    <node x="0.0" y="1196.0">teslafactory.CompletableRunnable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="teslafactory.model.CarFactory.Dealer" target="teslafactory.model.CarFactory" relationship="INNER_CLASS">
+      <point x="0.0" y="-39.5" />
+      <point x="356.0" y="524.0" />
+      <point x="246.5" y="524.0" />
+      <point x="0.0" y="249.5" />
+    </edge>
+    <edge source="teslafactory.model.CarFactory.FactoryWork" target="teslafactory.model.CarFactory" relationship="INNER_CLASS">
+      <point x="0.0" y="-139.0" />
+      <point x="137.0" y="524.0" />
+      <point x="246.5" y="524.0" />
+      <point x="0.0" y="249.5" />
+    </edge>
+    <edge source="teslafactory.Config.Consts" target="teslafactory.Config" relationship="INNER_CLASS">
+      <point x="0.0" y="-105.5" />
+      <point x="0.0" y="194.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.3321078431372549" showDependencies="true" x="864.0" y="806.0" />
+  <SelectedNodes>
+    <node>teslafactory.Main</node>
+    <node>teslafactory.model.supplier.BodySupplier</node>
+    <node>teslafactory.model.CarFactory</node>
+    <node>teslafactory.Config</node>
+    <node>teslafactory.model.State</node>
+    <node>teslafactory.model.supplier.DetailsSupplier</node>
+    <node>teslafactory.model.Preferences</node>
+    <node>teslafactory.Controller</node>
+    <node>teslafactory.model.Car</node>
+    <node>teslafactory.model.details.CarBody</node>
+    <node>teslafactory.model.details.Detail</node>
+    <node>teslafactory.model.supplier.EngineSupplier</node>
+    <node>teslafactory.model.supplier.AccessoriesSupplier</node>
+    <node>teslafactory.View</node>
+    <node>DetailsSupplier</node>
+    <node>teslafactory.model.details.CarAccessories</node>
+    <node>teslafactory.Storage</node>
+    <node>teslafactory.model.details.CarEngine</node>
+    <node>teslafactory.CompletableRunnable</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
