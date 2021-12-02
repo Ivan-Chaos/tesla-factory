@@ -163,7 +163,7 @@
    <ProgressBar fx:id="factoryCapacity" layoutX="109.0" layoutY="325.0" prefHeight="18.0" prefWidth="139.0" progress="0.0" />
    <ImageView fitHeight="150.0" fitWidth="260.0" layoutX="546.0" layoutY="28.0" onMouseClicked="#onHeavyClicked" pickOnBounds="true">
       <image>
-         <Image url="@wannaDance.gif" />
+         <Image url="@factory.gif" />
       </image>
    </ImageView>
 

@@ -49,7 +49,7 @@ public class CarFactory implements Observable, AutoCloseable {
         bodySupplier = new BodySupplier(bodyStorage, preferences::getBodySupplierDelay);
         bodySupplier.subscribe(this::notifyObservers);
         engineSupplier = new EngineSupplier(engineStorage, preferences::getEngineSupplierDelay);
-        bodySupplier.subscribe(this::notifyObservers);
+        engineSupplier.subscribe(this::notifyObservers);
         accessoriesSuppliers = Stream.generate(() ->
                 new AccessoriesSupplier(accessoriesStorage, preferences::getAccessoriesSupplierDelay))
                 .limit(config.accessoriesSuppliersCount())
