@@ -11,6 +11,8 @@ import teslafactory.model.supplier.BodySupplier;
 import teslafactory.model.supplier.EngineSupplier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import threadpool.SimpleThreadPool;
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -90,9 +92,10 @@ public class CarFactory implements Observable, AutoCloseable {
         private final AtomicInteger totalMadeCounter = new AtomicInteger(0);
         private final AtomicInteger carsInProgress = new AtomicInteger(0);
         private final int requiredStorageSize;
-        private final ConcurrentLinkedDeque<Thread> workers = new ConcurrentLinkedDeque<>();
+        private final SimpleThreadPool pool = SimpleThreadPool.getInstance();
         private final AtomicInteger activeWorkers = new AtomicInteger(0);
         private boolean closed = false;
+
         FactoryWork(int requiredStorageSize) {
             this.requiredStorageSize = requiredStorageSize;
             runNWorkers(1);
@@ -125,13 +128,10 @@ public class CarFactory implements Observable, AutoCloseable {
             for (int i = 0; i < n; i++) {
                 CompletableRunnable task = new CompletableRunnable(this::buildCar);
                 task.onComplete(() ->{
-                    workers.remove(task);
                     activeWorkers.decrementAndGet();
                 });
-                Thread thread = new Thread(task);
-                workers.add(thread);
+                pool.execute(task);
                 activeWorkers.incrementAndGet();
-                thread.start();
             }
         }
 
@@ -146,7 +146,7 @@ public class CarFactory implements Observable, AutoCloseable {
         @Override
         public void close() {
             closed = true;
-            workers.forEach(Thread::interrupt);
+            pool.interrupt();
         }
     }
 
