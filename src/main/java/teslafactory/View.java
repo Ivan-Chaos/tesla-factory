@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.chart.LineChart;
 
+import java.awt.*;
+import java.net.URI;
 
 
 public class View {
@@ -68,6 +70,18 @@ public class View {
     void setCarFactoryConfig(Config config) {
         this.config = config;
         log.debug("carFactory attached");
+    }
+
+    @FXML
+    public void onHeavyClicked() {
+        if(Desktop.isDesktopSupported()) {
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.browse(new URI("https://www.youtube.com/watch?v=cl1JnBvWiaE"));
+            } catch (Exception ex) {
+                // Ignore errors
+            }
+        }
     }
 
     public void onNext() {
