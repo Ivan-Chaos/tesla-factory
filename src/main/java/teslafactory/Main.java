@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.LoadException;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,7 @@ public class Main extends Application {
             primaryStage.setScene(new Scene(root));
             primaryStage.setOnCloseRequest(event -> System.exit(0));
             primaryStage.setTitle("Car Factory");
+            primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("wannaDance.gif")));
             primaryStage.show();
         } catch(LoadException e) {
             log.error(e.getMessage(), e);
