@@ -146,7 +146,7 @@ public class CarFactory implements Observable, AutoCloseable {
         @Override
         public void close() {
             closed = true;
-            pool.interrupt();
+            pool.terminate();
         }
     }
 

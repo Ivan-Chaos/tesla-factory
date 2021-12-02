@@ -94,10 +94,6 @@ public class SimpleThreadPool {
         stop();
     }
 
-    public void interrupt() {
-        threads.forEach(Thread::interrupt);
-    }
-
     public void stop() {
         execute.set(false);
     }

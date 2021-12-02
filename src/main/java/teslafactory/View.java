@@ -86,6 +86,7 @@ public class View {
 
     public void onNext() {
         Platform.runLater(() -> {
+            if (carFactory == null) return; // Factory is not initialized yet
             var state = carFactory.getState();
             Config config = carFactory.getConfig();
             bodyStorageInfo.setText(state.bodyStorageSize() + "/" + config.bodyStorageMaxSize());
