@@ -16,7 +16,7 @@ dependencies {
     implementation("org.openjfx:javafx-fxml:11.0.2")
 
     implementation("org.slf4j:slf4j-api:1.7.30")
-    implementation("ch.qos.logback:logback-classic:1.2.3")
+    implementation("org.apache.logging.log4j:log4j-slf4j18-impl:2.14.1")
     testImplementation("junit:junit:4.12")
 }
 
@@ -33,6 +33,9 @@ tasks {
         manifest {
             attributes["Main-Class"] = "teslafactory.Main"
         }
+        /*from(configurations.compileClasspath.map {
+            config -> config.map { if (it.isDirectory) it else zipTree(it) }
+        })*/
     }
 }
 
